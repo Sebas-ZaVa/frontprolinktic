@@ -30,7 +30,7 @@ import '@quasar/extras/material-icons-outlined/material-icons-outlined.css'
 
 
 // We load Quasar stylesheet file
-import 'quasar/dist/quasar.css'
+import 'quasar/dist/quasar.sass'
 
 
 

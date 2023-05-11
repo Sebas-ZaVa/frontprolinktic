@@ -6,8 +6,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-          'blue-linktic': '#00A0FF',
-    'blue-intense': '#006FB0',
+
+        'primary': 'var(--primary)',
+    'secondary': 'var(--secondary)',
+          'blue-linktic': 'var(--primary)',
+    'blue-intense': 'var(--secondary)',
     'gray-texts': '#505050',
     'gray-inputs': '#969EAF',
     'redtrigger': '#FFDFDF',
