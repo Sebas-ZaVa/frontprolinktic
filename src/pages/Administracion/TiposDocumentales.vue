@@ -4,7 +4,7 @@
 
 
     <!--CONTENIDO PRICIPAL-->
-    <main class="tw-min-h-screen tw-w-full tw-p-7 tw-bg-blue-fondo">
+    <main class="tw-min-h-screen tw-w-full tw-p-7 tw-bg-blue-fondo ">
 
       <div class="tw-flex tw-justify-between ">
 
@@ -52,6 +52,10 @@
           </footer>
         </q-expansion-item>
       </q-card>
+
+      <q-card class="q-mt-lg" flat>
+        <Table :TABLE_HEADER="Documental_HEADER" :TABLE_BODY="data" />
+      </q-card>
     </main>
     <!-- END BLOCK -->
 
@@ -59,18 +63,20 @@
 </template>
 
 <script setup lang="ts">
-import home from "assets/home.svg"
-import lines from "assets/icon-lines.svg"
-import chevron from "assets/chevron.svg"
-import mask from "assets/mask.svg"
-import interrogation from "assets/interrogation.svg"
-import tink from 'assets/tink.svg'
-import graphic from 'assets/graphic-icon.svg'
-import branch from 'assets/branch.svg'
-import ProLinkTicSm from 'assets/ProLinkTic-little.svg'
-import menu from 'assets/menu.svg'
+import Table from "src/components/Table.vue";
+import { Documental_HEADER } from "."
 import { ref } from "vue"
 
+const data = [
+  {
+    descripcion: 'Lorem ipsum',
+    termino: 'Lorem ipsum',
+    radicado: 'Lorem ipsum',
+    estado: 'Activo',
+
+  },
+
+]
 
 const formulario = ref({
   data: ""

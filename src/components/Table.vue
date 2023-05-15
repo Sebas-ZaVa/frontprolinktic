@@ -1,25 +1,24 @@
 
 <template>
   <div>
-    <q-table flat :rows="POLIZA_BODY" :columns="POLIZA_HEADER" row-key="numeroCotizacion"
+    <q-table flat :rows="TABLE_BODY" :columns="TABLE_HEADER" row-key="numeroTable"
       table-header-class="text-black text-h6 " class="q-mr-md full-width" rows-per-page-label="Páginas"
-      :pagination="{ rowsPerPage: 0 }" hide-pagination selection="multiple" v-model:selected="selection">
+      selection="multiple" v-model:selected="selection">
 
 
 
 
       <template v-slot:body-cell-estado="props">
-        <q-td v-if="props.row.estado === 'A'">
-          <q-chip outline color="green-7" text-color="white">
+        <q-td class="text-center row tw-justify-center tw-items-center">
 
-            Aprobado
+          <span class="tw-border tw-border-green-700 tw-bg-green-100   tw-rounded-xl col-8 tw-py-1">
+            {{ props.row.estado }}
+          </span>
 
-          </q-chip>
+
         </q-td>
 
-        <q-td v-else :props="props" :class="props.row.estado">
-          {{ props.row.estado }}
-        </q-td>
+
       </template>
 
 
@@ -29,7 +28,7 @@
         <q-td class="text-center">
 
           <!-- <q-btn size="sm" color="black" @click="editRow(props.row.id)" icon="edit" flat /> -->
-          <q-btn size="sm" color="white" style="background: #39BA2E;" icon="delete_outline" flat />
+          <q-btn size="sm" color="secondary" icon="edit" flat />
         </q-td>
 
       </template>
@@ -50,8 +49,8 @@ const q = useQuasar();
 const selection = ref([])
 
 const props = withDefaults(defineProps<{
-  POLIZA_BODY: any[],
-  POLIZA_HEADER: any[],
+  TABLE_BODY: any[],
+  TABLE_HEADER: any[],
   // buscar: string,
   // action: string,
   // target?: string,
