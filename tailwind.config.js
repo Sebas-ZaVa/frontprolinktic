@@ -9,10 +9,14 @@ module.exports = {
 
         'primary': 'var(--primary)',
     'secondary': 'var(--secondary)',
+    'label': 'var(--labels)',
+
+
+
           'blue-linktic': 'var(--primary)',
     'blue-intense': 'var(--secondary)',
     'gray-texts': '#505050',
-    'gray-inputs': '#969EAF',
+
     'redtrigger': '#FFDFDF',
     'redbordertrigger': '#EA0000',
     'gray-sky': '#EAECF0',
