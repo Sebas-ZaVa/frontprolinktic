@@ -54,7 +54,7 @@
       </q-card>
 
       <q-card class="q-mt-lg" flat>
-        <Table :TABLE_HEADER="Documental_HEADER" :TABLE_BODY="data" />
+        <Table :TABLE_HEADER="Documental_HEADER" :TABLE_BODY="data" selection="multiple" />
       </q-card>
     </main>
     <!-- END BLOCK -->
@@ -62,8 +62,8 @@
   </section>
 </template>
 
-<script setup lang="ts">
-import Table from "src/components/Table.vue";
+<script  lang="ts" setup>
+import Table from 'src/components/Table.vue';
 import { Documental_HEADER } from "."
 import { ref } from "vue"
 

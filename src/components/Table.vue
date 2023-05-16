@@ -3,7 +3,7 @@
   <div>
     <q-table flat :rows="TABLE_BODY" :columns="TABLE_HEADER" row-key="numeroTable"
       table-header-class="text-black text-h6 " class="q-mr-md full-width" rows-per-page-label="Páginas"
-      selection="multiple" v-model:selected="selection">
+      :selection="selection" v-model:selected="selection">
 
 
 
@@ -51,10 +51,12 @@ const selection = ref([])
 const props = withDefaults(defineProps<{
   TABLE_BODY: any[],
   TABLE_HEADER: any[],
+  selection: "none" | "single" | "multiple" | undefined,
   // buscar: string,
   // action: string,
   // target?: string,
 }>(), {
+  selection: "none"
   // target: ""
 })
 
