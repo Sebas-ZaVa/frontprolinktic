@@ -1,12 +1,12 @@
 <template>
   <section class="tw-flex tw-flex-row">
 
-    <BreadCrumbs :crumbs="routes" />
+
 
     <!--CONTENIDO PRICIPAL-->
-    <main class="tw-min-h-screen tw-w-full tw-p-7  ">
-
-      <div class="tw-flex tw-justify-between ">
+    <main class="tw-min-h-screen tw-w-full tw-p-7 tw-pt-0  ">
+      <BreadCrumbs :crumbs="routes" />
+      <div class="tw-flex tw-justify-between tw-pt-4 ">
 
         <h1 class="tw-text-3xl tw-font-medium">Administración de tipos documentales</h1>
         <q-btn label="Crear tipo documental" color="secondary" icon="add" class="tw-rounded-lg"></q-btn>
