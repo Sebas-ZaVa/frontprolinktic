@@ -20,10 +20,10 @@
             <p>Serie</p>
             <q-select outlined v-model="model" :options="options" label="Serie" />
           </div>
-         <div class="tw-w-1/4">
-           <p>Subserie</p>
-           <q-select outlined v-model="model" :options="options" label="Subserie" />
-         </div>
+          <div class="tw-w-1/4">
+            <p>Subserie</p>
+            <q-select outlined v-model="model" :options="options" label="Subserie" />
+          </div>
           <div class="tw-w-1/4">
             <p>Soporte</p>
             <q-select outlined v-model="model" :options="options" label="Soporte" />
@@ -37,19 +37,20 @@
               <Table :TABLE_HEADER="AMPAROS_HEADER" :TABLE_BODY="amparos"></Table>
             </q-card>
           </div>
+          <div class="row col-xs-12 col-sm-12 col-md-6 col-lg-6  q-pl-xl q-pt-none">
+            <q-card bordered flat class="q-pa-md tw-rounded-2xl">
+              <div class="">
+                <p class="tw-text-lg">Estos son los tipos documentales que has seleccionado</p>
+                <q-chip removable color="dark" t outline v-model="amparos[i]" v-for="(amparo, i) in amparos">
+                  {{ amparo }}
+                </q-chip>
 
-          <q-card class="row col-xs-12 col-sm-12 col-md-6 col-lg-6 tw-rounded-2xl" bordered flat>
-            <div class="">
-              <p class="tw-text-lg">Estos son los tipos documentales que has seleccionado</p>
-              <q-chip removable color="dark" t outline v-model="amparos[i]" v-for="(amparo, i) in amparos">
-                {{ amparo }}
-              </q-chip>
-
-            </div>
-          </q-card>
+              </div>
+            </q-card>
+          </div>
           <div class="col col-12 row justify-center q-gutter-x-md q-mt-xl q-pb-xl">
             <q-btn label="Limpiar" style="width: 240px; color: #003352" class="tw-rounded-xl tw-p-3 tw-bg-blue-lighter" />
-            <q-btn label="Asignar" text-color="white" style="width: 240px;" class="tw-rounded-xl tw-p-3 tw-bg-blue"/>
+            <q-btn label="Asignar" text-color="white" style="width: 240px;" class="tw-rounded-xl tw-p-3 tw-bg-blue" />
           </div>
         </div>
       </q-form>
@@ -72,13 +73,8 @@
         </div>
       </figure>
     </q-card>
-    <Modal
-      v-model="showModal"
-      title="Asignación exitosa"
-      text="Se ha asignado con éxito los tipos documentales a la dependencia x."
-      is-success
-      text-button="¡Ok!"
-    />
+    <Modal v-model="showModal" title="Asignación exitosa"
+      text="Se ha asignado con éxito los tipos documentales a la dependencia x." is-success text-button="¡Ok!" />
   </div>
 </template>
 <script lang="ts" setup>
