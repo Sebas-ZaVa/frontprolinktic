@@ -17,22 +17,12 @@ const routes: RouteRecordRaw[] = [
   },
 
   {
-    path: '/administracion',
-    component: () => import('layouts/MainLayout.vue'),
-
-    children: [
-      { path: '', component: () => import('pages/Administracion/TiposDocumentales.vue'), },
-
-    ],
-  },
-
-  {
     path: '/SGDA',
     component: () => import('layouts/MainLayout.vue'),
 
     children: [
       { path: '/SGDA/asignacion', component: () => import('pages/SGDA/ClasificacionDocumental/Asignacion.vue'), },
-
+      { path: '/SGDA/administracion', component: () => import('pages/SGDA/Administracion/TiposDocumentales.vue'), },
     ],
   },
   // Always leave this as last one,

@@ -2,12 +2,8 @@
 <template>
   <div>
     <q-table flat :rows="TABLE_BODY" :columns="TABLE_HEADER" row-key="numeroTable"
-      table-header-class="text-black text-h6 " class="q-mr-md full-width" rows-per-page-label="Páginas"
-      :selection="selection" v-model:selected="selection">
-
-
-
-
+      table-header-class="text-black text-h6 " class="q-mr-md full-width" rows-per-page-label="Páginas" selection=multiple
+      v-model:selected="selection">
       <template v-slot:body-cell-estado="props">
         <q-td class="text-center row tw-justify-center tw-items-center">
 

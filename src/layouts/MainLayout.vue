@@ -1,26 +1,17 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header color="white" class="bg-white">
+    <q-header flat color="white" class="bg-white tw-shadow-md">
       <q-toolbar class="tw-p-0">
 
-        <div
-          class="tw-flex tw-items-center tw-justify-between tw-w-full tw-bg-white tw-px-8 tw-h-24 tw-shadow-md tw-z-10">
+        <div class="row tw-flex tw-items-center tw-justify-between tw-w-full tw-bg-white tw-px-8 tw-h-24  tw-z-10 tw-">
 
-          <div class="tw-flex tw-flex-row tw-justify-start">
+          <div class="tw-flex tw-flex-row tw-justify-start col-5">
             <!--SEARCH-->
-            <div class="tw-relative">
-              <input
-                class="tw-pl-10 tw-w-94 tw-lg:w-96 tw-sm:52 tw-py-3 tw-rounded-lg tw-border tw-border-gray-sky tw-bg-white"
-                type="search" placeholder="Buscar" style="">
-              <div class="tw-absolute tw-inset-y-0 tw-left- tw-flex tw-items-center tw-pl-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="22" fill="#505050" class="tw-bi tw-bi-search"
-                  viewBox="0 0 16 16">
-                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1
-                    1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5
-                    0 0 1 11 0z" />
-                </svg>
-              </div>
-            </div>
+            <q-input outlined v-model="search" label="Buscar " dense class="tw-w-full">
+              <template v-slot:prepend>
+                <q-icon name="search" />
+              </template>
+            </q-input>
           </div>
           <!--END SEARCH-->
 
@@ -28,7 +19,7 @@
           <div class="tw-flex tw-flex-row tw-justify-center tw-items-center">
 
             <div class="md:tw-mr-5">
-              <q-btn-dropdown class="tw-bg-blue-light" label="Módulo SDGA" icon="library_books">
+              <q-btn-dropdown class="tw-bg-blue-light  tw-text-black" label="Módulo SDGA" icon="archive">
                 <q-list>
                   <q-item clickable v-close-popup @click="onItemClick">
                     <q-item-section>
@@ -53,9 +44,17 @@
 
             <div class="tw-mx-2 tw-sm:mx-3">
               <a href="#">
-                <img class="tw-w-12" :src="tink" alt="LogoLinktic">
+                <q-btn icon="question_mark" text-color="black"></q-btn>
               </a>
             </div>
+
+            <div class="tw-mx-2 tw-sm:mx-3">
+              <a href="#">
+                <q-btn icon="o_notifications" text-color="black"></q-btn>
+              </a>
+            </div>
+
+
 
             <div class="tw-flex tw-flex-row tw-items-center">
               <div class="tw-flex-shrink-0 tw-px-2 tw--mr-3 tw-md:-mr-10 tw-h-full">
@@ -69,7 +68,7 @@
                 <div class="tw-flex tw-items-start tw-flex-col tw-pr-6 tw-sm:pr-0">
                   <p class="tw-text-base tw-text-black">Victor Rodríguez
                   </p>
-                  <p class="tw-text-gray-inputs tw-text-sm">Administrador</p>
+                  <p class="tw-text-gray-400 tw-text-sm">Administrador</p>
                 </div>
               </div>
 
@@ -110,7 +109,8 @@
     </q-drawer>
 
     <q-page-container class="tw-bg-background " style="min-height: 100vh">
-      <router-view class="tw-p-[40px]"/>
+      <router-view class="tw-p-[40px]" />
+
     </q-page-container>
   </q-layout>
 </template>
@@ -175,6 +175,7 @@ const essentialLinks: EssentialLinkProps[] = [
 ];
 
 const leftDrawerOpen = ref(false)
+const search = ref("")
 
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value
