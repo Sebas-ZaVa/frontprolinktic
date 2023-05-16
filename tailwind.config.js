@@ -22,7 +22,9 @@ bg: '#F5F7FB',
     'gray-sky': '#EAECF0',
     'blue-fondo': '#F2FDF1',
     'blue-light': '#E0F3FEB2',
-    'background': '#F5F7FB'
+    'background': '#F5F7FB',
+    'blue-lighter': '#E0F3FE',
+    'blue': '#006FB0',
       }
     }
   },
