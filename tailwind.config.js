@@ -11,7 +11,7 @@ module.exports = {
     'secondary': 'var(--secondary)',
     'label': 'var(--labels)',
 
-
+bg: '#F5F7FB',
 
           'blue-linktic': 'var(--primary)',
     'blue-intense': 'var(--secondary)',

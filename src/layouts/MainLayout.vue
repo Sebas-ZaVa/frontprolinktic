@@ -1,10 +1,9 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated color="white" class="bg-white">
+    <q-header flat color="white" class="bg-white tw-shadow-md">
       <q-toolbar>
 
-        <div
-          class="tw-flex tw-items-center tw-justify-between tw-w-full tw-bg-white tw-px-8 tw-h-24 tw-shadow-md tw-z-10 tw-">
+        <div class="tw-flex tw-items-center tw-justify-between tw-w-full tw-bg-white tw-px-8 tw-h-24  tw-z-10 tw-">
 
           <div class="tw-flex tw-flex-row tw-justify-start">
             <!--SEARCH-->
@@ -90,7 +89,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="tw-bg-bg">
       <router-view />
     </q-page-container>
   </q-layout>

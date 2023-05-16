@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white">
-    <q-form ref="CotizacionesForm">
+    <q-form ref="CotizacionesForm" class="tw-pa-6">
       <q-expansion-item expand-separator default-opened>
         <template v-slot:header>
           <div class="col row">
@@ -44,7 +44,7 @@
         <div v-if="amparos.length > 0">
 
 
-          <Table :TABLE_HEADER="AMPAROS2_HEADER" :TABLE_BODY="data" />
+          <Table :TABLE_HEADER="AMPAROS2_HEADER" :TABLE_BODY="data" :selection="undefined" />
         </div>
         <figure class="row justify-center items-center" v-else>
           <div class="text-center">
