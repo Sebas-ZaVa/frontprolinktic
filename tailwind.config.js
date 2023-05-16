@@ -20,7 +20,9 @@ module.exports = {
     'redtrigger': '#FFDFDF',
     'redbordertrigger': '#EA0000',
     'gray-sky': '#EAECF0',
-    'blue-fondo': '#F2FDF1'
+    'blue-fondo': '#F2FDF1',
+    'blue-light': '#E0F3FEB2',
+    'background': '#F5F7FB'
       }
     }
   },
