@@ -3,8 +3,9 @@
 :root{
   --primary: #00A0FF;
   --secondary: #006FB0;
+  --labels: #969EAF;
   /* 'gray-texts': '#505050',
-  'gray-inputs': '#969EAF',
+
   'redtrigger': '#FFDFDF',
   'redbordertrigger': '#EA0000',
   'gray-sky': '#EAECF0',
