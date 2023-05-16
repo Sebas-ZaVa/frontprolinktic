@@ -1,5 +1,29 @@
 <template>
   <section class="tw-flex tw-flex-row">
+    <q-drawer :mini="leftDrawerOpen" show-if-above bordered>
+      <section class="tw-flex tw-flex-row tw-pt-5 tw-px-2 tw-justify-between tw-items-center">
+        <a href="#" class="" :class="leftDrawerOpen ? 'tw-hidden' : ''">
+          <img :src="ProLinkTicSm" alt="logo-LinkTic"></a>
+        <q-btn flat round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
+      </section>
+      <q-list>
+        <q-item-label header>
+
+        </q-item-label>
+
+        <!-- <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" /> -->
+        <q-item clickable v-ripple>
+          <q-item-section avatar>
+            <q-icon name="home" color="grey-6" size="2rem" />
+          </q-item-section>
+
+          <q-item-section>
+            Home
+          </q-item-section>
+        </q-item>
+
+      </q-list>
+    </q-drawer>
     <!--COMIENZO ASIDE-->
     <aside class="tw-w-1/6 tw-hidden sm:tw-block tw-shadow-r tw-shadow-lg tw-min-h-full tw-bg-white tw-z-20"
       style="min-width: 300px; min-height: 100vh;">
@@ -109,7 +133,30 @@
         </div>
       </header>
       <!--END HEADER-->
+      <q-drawer :mini="leftDrawerOpen" show-if-above bordered>
+        <section class="tw-flex tw-flex-row tw-pt-5 tw-px-2 tw-justify-between tw-items-center">
+          <a href="#" class="" :class="leftDrawerOpen ? 'tw-hidden' : ''">
+            <img :src="ProLinkTicSm" alt="logo-LinkTic"></a>
+          <q-btn flat round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
+        </section>
+        <q-list>
+          <q-item-label header>
 
+          </q-item-label>
+
+          <!-- <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" /> -->
+          <q-item clickable v-ripple>
+            <q-item-section avatar>
+              <q-icon name="home" color="grey-6" size="2rem" />
+            </q-item-section>
+
+            <q-item-section>
+              Home
+            </q-item-section>
+          </q-item>
+
+        </q-list>
+      </q-drawer>
       <!--CONTENIDO PRICIPAL-->
       <main class="tw-min-h-screen tw-w-full tw-p-7 tw-bg-blue-fondo">
 
@@ -133,4 +180,11 @@ import graphic from 'assets/graphic-icon.svg'
 import branch from 'assets/branch.svg'
 import ProLinkTicSm from 'assets/ProLinkTic-little.svg'
 import menu from 'assets/menu.svg'
+import {ref} from "vue";
+
+const leftDrawerOpen = ref(false)
+
+function toggleLeftDrawer() {
+  leftDrawerOpen.value = !leftDrawerOpen.value
+}
 </script>
