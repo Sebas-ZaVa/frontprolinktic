@@ -1,7 +1,7 @@
 <template>
   <section class="tw-flex tw-flex-row">
 
-
+    <BreadCrumbs :crumbs="routes" />
 
     <!--CONTENIDO PRICIPAL-->
     <main class="tw-min-h-screen tw-w-full tw-p-7  ">
@@ -63,6 +63,7 @@
 import Table from 'src/components/Table.vue';
 import { Documental_HEADER } from "."
 import { ref } from "vue"
+import BreadCrumbs from 'src/components/BreadCrumbs/BreadCrumbs.vue';
 
 const data = [
   {
@@ -78,4 +79,23 @@ const data = [
 const formulario = ref({
   data: ""
 })
+
+
+const routes = [
+  {
+    name: 'Inicio',
+    to: '/home'
+  },
+  {
+    name: 'Módulo SGDA',
+    to: '/home'
+  },
+  {
+    name: 'Clasificación documental',
+    to: '/home'
+  },
+  {
+    name: 'Asignación de tipos documentales'
+  }
+]
 </script>

@@ -1,7 +1,10 @@
 <template>
   <div>
     <BreadCrumbs :crumbs="routes" />
+    <div class="tw-flex tw-justify-between q-my-lg">
 
+      <h1 class="tw-text-3xl tw-font-medium">Administración de tipos documentales</h1>
+    </div>
     <q-card class="tw-rounded-lg tw-p-7">
       <q-form ref="CotizacionesForm">
         <q-expansion-item expand-separator default-opened>

@@ -108,13 +108,10 @@
       </q-list>
     </q-drawer>
 
-    <<<<<<< HEAD <q-page-container class="tw-bg-bg">
-      <router-view />
-      =======
-      <q-page-container class="tw-bg-background " style="min-height: 100vh">
-        <router-view class="tw-p-[40px]" />
-        >>>>>>> 1a23c38857db9fe7c52442be4a292181139491b9
-      </q-page-container>
+    <q-page-container class="tw-bg-background " style="min-height: 100vh">
+      <router-view class="tw-p-[40px]" />
+
+    </q-page-container>
   </q-layout>
 </template>
 
