@@ -11,3 +11,32 @@
   'gray-sky': '#EAECF0',
   'blue-fondo': '#F2FDF1' */
 }
+
+
+@font-face {
+  font-family: HovesProTrialRegular;
+  src: url("../assets/fonts/HovesProTrialRegular.ttf");
+}
+
+@font-face {
+  font-family: HovesProTrialBold;
+  src: url("../assets/fonts/HovesProTrialBold.ttf");
+}
+
+body {
+  font-family: 'HovesProTrialRegular', serif;
+}
+
+.text-bold {
+  font-family: 'HovesProTrialBold', serif;
+}
+
+button {
+  text-transform: capitalize !important;
+  font-weight: bold !important;
+}
+
+thead tr th {
+  font-weight: bold !important;
+  font-size: 14px !important;
+}
