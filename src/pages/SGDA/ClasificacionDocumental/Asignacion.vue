@@ -1,66 +1,71 @@
 <template>
-  <div class="bg-white">
-    <q-form ref="CotizacionesForm">
-      <q-expansion-item expand-separator default-opened>
-        <template v-slot:header>
-          <div class="col row">
-            <b class="h7">Amparos - Valor asegurado</b>
-          </div>
-        </template>
-        <div class=" row  q-col-gutter-md ">
+  <div>
+    <BreadCrumbs :crumbs="routes" />
 
-
-
-          <div class="q-pr-xl col-xs-12 col-sm-12 col-md-6 col-lg-6 q-pt-none">
-
-
-            <q-card class=" " bordered flat>
-              <b class="block q-pa-md">Seleccione los amparos</b>
-              <Table :TABLE_HEADER="AMPAROS_HEADER" :TABLE_BODY="amparos"></Table>
-            </q-card>
-          </div>
-
-          <q-card class="row col-xs-12 col-sm-12 col-md-6 col-lg-6  " bordered flat>
-            <div class="row">
-              <q-chip removable color="dark" t outline v-model="amparos[i]" v-for="(amparo, i) in amparos">
-                {{ amparo }}
-              </q-chip>
-
+    <q-card class="tw-rounded-lg tw-p-7">
+      <q-form ref="CotizacionesForm">
+        <q-expansion-item expand-separator default-opened>
+          <template v-slot:header>
+            <div class="col row">
+              <b class="h7">Amparos - Valor asegurado</b>
             </div>
-          </q-card>
-          <div class="col col-12 row justify-center q-gutter-x-md q-mt-xl q-pb-xl">
-            <q-btn color-button="primary" flat color="black" no-caps label="Limpiar Formulario" style="width: 240px;" />
-            <q-btn color="dark" no-caps label="Agregar" text-color="white" style="width: 240px;" />
+          </template>
+          <div class=" row  q-col-gutter-md ">
+
+
+
+            <div class="q-pr-xl col-xs-12 col-sm-12 col-md-6 col-lg-6 q-pt-none">
+
+
+              <q-card class=" " bordered flat>
+                <b class="block q-pa-md">Seleccione los amparos</b>
+                <Table :TABLE_HEADER="AMPAROS_HEADER" :TABLE_BODY="amparos"></Table>
+              </q-card>
+            </div>
+
+            <q-card class="row col-xs-12 col-sm-12 col-md-6 col-lg-6  " bordered flat>
+              <div class="row">
+                <q-chip removable color="dark" t outline v-model="amparos[i]" v-for="(amparo, i) in amparos">
+                  {{ amparo }}
+                </q-chip>
+
+              </div>
+            </q-card>
+            <div class="col col-12 row justify-center q-gutter-x-md q-mt-xl q-pb-xl">
+              <q-btn color-button="primary" flat color="black" no-caps label="Limpiar Formulario" style="width: 240px;" />
+              <q-btn color="dark" no-caps label="Agregar" text-color="white" style="width: 240px;" />
+            </div>
           </div>
-        </div>
-      </q-expansion-item>
+        </q-expansion-item>
 
 
 
-      <q-card class="q-pa-md" bordered flat>
-        <div class="col row">
-          <b class="h7">Listado de asegurados agregados</b>
-        </div>
-        <div v-if="amparos.length > 0">
-
-
-          <Table :TABLE_HEADER="AMPAROS2_HEADER" :TABLE_BODY="data" />
-        </div>
-        <figure class="row justify-center items-center" v-else>
-          <div class="text-center">
-            <q-icon name="groups" size="2rem"></q-icon>
-
-            <p class="text-grey-7 block">Aún no hay asegurados</p>
-            <b class="block">
-              <q-icon name="add"></q-icon>
-              Agregar asegurados</b>
+        <q-card class="q-pa-md" bordered flat>
+          <div class="col row">
+            <b class="h7">Listado de asegurados agregados</b>
           </div>
-        </figure>
-      </q-card>
-    </q-form>
+          <div v-if="amparos.length > 0">
+
+
+            <Table :TABLE_HEADER="AMPAROS2_HEADER" :TABLE_BODY="data" />
+          </div>
+          <figure class="row justify-center items-center" v-else>
+            <div class="text-center">
+              <q-icon name="groups" size="2rem"></q-icon>
+
+              <p class="text-grey-7 block">Aún no hay asegurados</p>
+              <b class="block">
+                <q-icon name="add"></q-icon>
+                Agregar asegurados</b>
+            </div>
+          </figure>
+        </q-card>
+      </q-form>
+    </q-card>
   </div>
 </template>
 <script lang="ts" setup>
+import BreadCrumbs from 'components/BreadCrumbs/BreadCrumbs.vue';
 import Table from 'src/components/Table.vue';
 import { useQuasar } from 'quasar';
 import { Ref, ref } from 'vue';
@@ -198,7 +203,23 @@ const formulario: Ref<Formulario> = ref({
   observaciones: ""
 });
 
-
+const routes = [
+  {
+    name: 'Inicio',
+    to: '/home'
+  },
+  {
+    name: 'Módulo SGDA',
+    to: '/home'
+  },
+  {
+    name: 'Clasificación documental',
+    to: '/home'
+  },
+  {
+    name: 'Asignación de tipos documentales'
+  }
+]
 
 
 </script>
