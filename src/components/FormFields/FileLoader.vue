@@ -7,7 +7,7 @@
         Please use a maximum value of 30.
       </template>
     </q-file>
-    <figure v-if="!value" class="flex tw-items-center">
+    <figure v-if="!value" class="flex tw-items-center tw-justify-center">
       <div>
         <q-icon name="add_to_drive"></q-icon>
         <b class="block">Clic aquí para

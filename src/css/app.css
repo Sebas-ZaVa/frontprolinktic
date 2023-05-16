@@ -14,21 +14,35 @@
 
 
 @font-face {
-  font-family: HovesProTrialRegular;
+  font-family: HovesProTrial;
   src: url("../assets/fonts/HovesProTrialRegular.ttf");
 }
 
 @font-face {
-  font-family: HovesProTrialBold;
+  font-family: HovesProTrial;
+  src: url("../assets/fonts/HovesProTrialMedium.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: HovesProTrial;
+  src: url("../assets/fonts/HovesProTrialDemiBold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: HovesProTrial;
   src: url("../assets/fonts/HovesProTrialBold.ttf");
+  font-weight: 800;
 }
 
 body {
-  font-family: 'HovesProTrialRegular', serif;
+  font-family: 'HovesProTrial', serif;
 }
 
 .text-bold {
-  font-family: 'HovesProTrialBold', serif;
+  font-family: 'HovesProTrial', serif;
+  font-weight: 800;
 }
 
 button {

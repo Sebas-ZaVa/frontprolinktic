@@ -1,6 +1,6 @@
 <template>
   <main>
-    <a href="/cotizaciones" class="text-primary" style="text-decoration: none;">
+    <a href="/cotizaciones" class="text-primary q-mb-md block" style="text-decoration: none;">
       <q-icon size="1.5em" name="chevron_left" color="primary"></q-icon>
       <b>
         Volver
@@ -10,10 +10,10 @@
     <q-form>
       <div class="tw-flex tw-justify-between tw-pt-4 ">
 
-        <h1 class="tw-text-3xl tw-font-medium">Administración de tipos documentales</h1>
+        <h1 class="tw-text-3xl tw-font-bold">Formulario de radicación</h1>
 
       </div>
-      <q-card>
+      <q-card flat>
 
 
         <q-expansion-item expand-separator default-opened class="q-bg-white q-mt-lg">
