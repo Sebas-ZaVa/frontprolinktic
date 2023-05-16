@@ -23,6 +23,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: '/SGDA/asignacion', component: () => import('pages/SGDA/ClasificacionDocumental/Asignacion.vue'), },
       { path: '/SGDA/administracion', component: () => import('pages/SGDA/Administracion/TiposDocumentales.vue'), },
+      { path: '/SGDA/radicacion', component: () => import('pages/SGDA/Radicacion.vue'), },
     ],
   },
   // Always leave this as last one,
