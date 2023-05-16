@@ -31,8 +31,8 @@
         </div>
 
         <div class="tw-mt-5 row q-col-gutter-md ">
-          <div class=" col-xs-12 col-sm-12 col-md-6 col-lg-6 q-pt-none">
-            <q-card class="tw-rounded-2xl" bordered flat>
+          <div class="q-pr-xl col-xs-12 col-sm-12 col-md-6 col-lg-6 q-pt-none">
+            <q-card class="tw-rounded-2xl tw-p-2" bordered flat>
               <p class="tw-text-lg q-pa-md">Seleccione los tipos documentales que desea asignar</p>
               <Table :TABLE_HEADER="AMPAROS_HEADER" :TABLE_BODY="amparos"></Table>
             </q-card>
@@ -142,6 +142,37 @@ const AMPAROS2_HEADER = [
     field: 'estado',
   },
 ]
+
+const formulario: Ref<Formulario> = ref({
+  fechaSolicitud: "",
+  funcionario: "",
+  ramo: "",
+  producto: "",
+  tipoNegocio: "",
+  negocioNuevo: "",
+  aseguradoraActual: "",
+  numeroPoliza: "",
+  vigenciaInicio: "",
+  vigenciaFin: "",
+  firstName: "",
+  secondName: "",
+  lastName: "",
+  lastSecondName: "",
+  clave: "",
+  plazoPago: "",
+  duracion: "",
+  tipoSeguro: "",
+  periodicidadPago: "",
+  primaAñoAnterior: "",
+  presupuestoAsignado: "",
+  porcentajeEstampillas: "",
+  expectativaComercial: "",
+  canalComercializacion: "",
+  porcentajeComision: "",
+  honorariosGestion: "",
+  otrosGastos: "",
+  observaciones: ""
+});
 
 const routes = [
   {
