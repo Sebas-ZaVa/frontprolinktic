@@ -1,19 +1,21 @@
-import { RouteRecordRaw } from 'vue-router';
+import {RouteRecordRaw} from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      { path: '', component: () => import('pages/IndexPage.vue') },
-
-    ],
+    redirect: to => {
+      const token = localStorage.getItem("bearer_token");
+      if (token) {
+        return "/SGDA";
+      } else {
+        return "/login";
+      }
+    }
   },
-
-  { path: '/Home', component: () => import('pages/Home.vue') },
+  {path: '/Home', component: () => import('pages/Home.vue')},
   {
     path: '/login',
-    component: () => import('pages/Login.vue'),
+    component: () => import('pages/Login.vue')
   },
 
   {
@@ -21,9 +23,9 @@ const routes: RouteRecordRaw[] = [
     component: () => import('layouts/MainLayout.vue'),
 
     children: [
-      { path: '/SGDA/asignacion', component: () => import('pages/SGDA/ClasificacionDocumental/Asignacion.vue'), },
-      { path: '/SGDA/administracion', component: () => import('pages/SGDA/Administracion/TiposDocumentales.vue'), },
-      { path: '/SGDA/radicacion', component: () => import('pages/SGDA/Radicacion.vue'), },
+      {path: '/SGDA/asignacion', component: () => import('pages/SGDA/ClasificacionDocumental/Asignacion.vue'),},
+      {path: '/SGDA/administracion', component: () => import('pages/SGDA/Administracion/TiposDocumentales.vue'),},
+      {path: '/SGDA/radicacion', component: () => import('pages/SGDA/Radicacion.vue'),},
     ],
   },
   // Always leave this as last one,

@@ -1,15 +1,20 @@
-<script lang="ts" setup >
-import { ref } from 'vue'
+<script lang="ts" setup>
+import {ref} from 'vue'
 import womenlogin from "assets/women-login.svg"
 import proLinkTicLogo from "assets/ProLinkTic.svg"
 import loginImg from "assets/final-login.svg"
 //import triggerError from './components/trigger-error.vue';
 import service from "../services/LoginService"
+import {useRouter} from "vue-router";
+import {useQuasar} from "quasar";
+
+const router = useRouter();
+const q = useQuasar();
 
 const user = ref("")
 const pass = ref("")
 
-const isPwd = ref(false)
+const isPwd = ref(true)
 
 const error = ref(false)
 
@@ -20,10 +25,14 @@ const errorHandler = (e: any) => {
 }
 
 
-
-const loginHandler = (e) => {
+const loginHandler = async (e: any) => {
   e.preventDefault()
-  service.login(user.value, pass.value)
+  const response = await service.login(user.value, pass.value)
+  if (response) {
+    await router.push("/SGDA");
+  } else {
+    q.notify("Error iniciando sesión");
+  }
 }
 </script>
 
@@ -37,11 +46,12 @@ const loginHandler = (e) => {
         <div class="tw-absolute tw-top-1/2 tw-left-14 tw-transform tw--translate-y-1/2">
           <h1 class="tw-text-white tw-font-semibold tw-text-3xl md:tw-text-6xl tw-text-left tw-mb-4">Bienvenido<br>de
             nuevo</h1>
-          <p class="tw-text-white tw-text-base md:tw-text-xl tw-text-left tw-pr-6 tw-pb-8 tw-max-w-xs">En esta plataforma
+          <p class="tw-text-white tw-text-base md:tw-text-xl tw-text-left tw-pr-6 tw-pb-8 tw-max-w-xs">En esta
+            plataforma
             podrás Lorem Ipsum
             dolor sit amet</p>
           <a href="#"
-            class="tw-text-blue-linktic tw-hidden sm:tw-block tw-text-center tw-bg-white tw-font-semibold tw-py-3 tw-mr-20 tw-rounded-md">¿Necesitas
+             class="tw-text-blue-linktic tw-hidden sm:tw-block tw-text-center tw-bg-white tw-font-semibold tw-py-3 tw-mr-20 tw-rounded-md">¿Necesitas
             ayuda?</a>
         </div>
       </div>
@@ -61,7 +71,7 @@ const loginHandler = (e) => {
           <form class="tw-pt-3">
 
             <!-- AQUÍ DEBE IR EL TRIGGER ERROR  -->
-            <trigger-error v-if="error" />
+            <trigger-error v-if="error"/>
             <!-- AQUÍ DEBE IR EL TRIGGER ERROR -->
 
             <div class="tw-py-6">
@@ -69,9 +79,10 @@ const loginHandler = (e) => {
               <div class="tw-relative">
 
                 <q-input type="text" id="username" name="username" placeholder="Ingrese su email" required
-                  class=" tw-rounded-xl tw-py-3  tw-w-full tw-shadow-sm tw-border-gray-inputs" v-model="user" outlined>
+                         class=" tw-rounded-xl tw-py-3  tw-w-full tw-shadow-sm tw-border-gray-inputs" v-model="user"
+                         outlined>
                   <template v-slot:prepend>
-                    <q-icon name="o_mail" />
+                    <q-icon name="o_mail"/>
                   </template>
                 </q-input>
               </div>
@@ -81,14 +92,14 @@ const loginHandler = (e) => {
               <label for="username" class="tw-block tw-text-gray-inputs tw-text-lg tw-mx-2 tw-mb-1">Contraseña</label>
               <div class="tw-relative">
                 <q-input v-model="pass" :type="isPwd ? 'password' : 'text'" hint="Password with toggle" id="password"
-                  name="password" placeholder="Ingrese su Ingrese su clave" required
-                  class=" tw-rounded-xl tw-py-3 tw-w-full tw-shadow-sm" outlined>
+                         name="password" placeholder="Ingrese su Ingrese su clave" required
+                         class=" tw-rounded-xl tw-py-3 tw-w-full tw-shadow-sm" outlined>
                   <template v-slot:prepend>
-                    <q-icon name="o_lock" />
+                    <q-icon name="o_lock"/>
                   </template>
                   <template v-slot:append>
                     <q-icon :name="isPwd ? 'visibility_off' : 'visibility'" class="cursor-pointer"
-                      @click="isPwd = !isPwd" />
+                            @click="isPwd = !isPwd"/>
                   </template>
                 </q-input>
 
@@ -102,13 +113,15 @@ const loginHandler = (e) => {
               <div class="tw-flex tw-items-center tw-justify-center tw-mr-auto tw-pt-5">
                 <label for="remember" class="tw-flex tw-items-center">
                   <input type="checkbox" id="remember" name="remember"
-                    class="tw-h-6 tw-w-6 tw-border tw-border-gray-inputs tw-mr-2">
+                         class="tw-h-6 tw-w-6 tw-border tw-border-gray-inputs tw-mr-2">
                   <span class="tw-text-gray-texts">Recordar mi clave</span>
                 </label>
               </div>
 
               <button type="submit" @click="loginHandler"
-                class="tw-flex tw-justify-center tw-items-center tw-w-auto tw-bg-blue-linktic tw-text-white tw-py-3 tw-rounded-lg tw-font-semibold tw-mt-5">Ingresar</button>
+                      class="tw-flex tw-justify-center tw-items-center tw-w-auto tw-bg-blue-linktic tw-text-white tw-py-3 tw-rounded-lg tw-font-semibold tw-mt-5">
+                Ingresar
+              </button>
               <a href="#" class="tw-font-bold tw-text-blue-intense tw-mx-auto tw-my-8">Registrarme</a>
             </div>
           </form>

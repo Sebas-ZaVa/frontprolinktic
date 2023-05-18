@@ -9,7 +9,8 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
 
 
-const { configure } = require('quasar/wrappers');
+const {configure} = require('quasar/wrappers');
+const {Notify} = require("quasar");
 
 
 module.exports = configure(function (/* ctx */) {
@@ -23,7 +24,6 @@ module.exports = configure(function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
     boot: [
-
       'axios',
     ],
 
@@ -44,15 +44,21 @@ module.exports = configure(function (/* ctx */) {
 
       'roboto-font', // optional, you are not bound to it
       'material-icons', // optional, you are not bound to it
-     'material-icons-outlined'
+      'material-icons-outlined'
     ],
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#build
     build: {
-       postcss: { plugins: { tailwindcss: require('tailwindcss'), autoprefixer: require('autoprefixer'), }, },
+      postcss: {plugins: {tailwindcss: require('tailwindcss'), autoprefixer: require('autoprefixer'),},},
       target: {
-        browser: [ 'es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1' ],
+        browser: ['es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1'],
         node: 'node16'
+      },
+      env: {
+        BACK_URL: process.env.BACK_URL,
+        BACK_PORT: process.env.BACK_PORT,
+        BPM_URL: process.env.BPM_URL,
+        SGDEA_URL: process.env.SGDEA_URL
       },
 
       vueRouterMode: 'history', // available values: 'hash', 'history'
@@ -82,6 +88,7 @@ module.exports = configure(function (/* ctx */) {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
     devServer: {
+      port: process.env.PORT,
       // https: true
       open: true // opens browser window automatically
     },
@@ -101,7 +108,7 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: ['Notify']
     },
 
     // animations: 'all', // --- includes all animations
@@ -123,7 +130,7 @@ module.exports = configure(function (/* ctx */) {
     // https://v2.quasar.dev/quasar-cli-vite/developing-ssr/configuring-ssr
     ssr: {
       // ssrPwaHtmlFilename: 'offline.html', // do NOT use index.html as name!
-                                          // will mess up SSR
+      // will mess up SSR
 
       // extendSSRWebserverConf (esbuildConf) {},
       // extendPackageJson (json) {},

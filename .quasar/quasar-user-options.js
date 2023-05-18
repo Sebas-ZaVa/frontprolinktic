@@ -15,7 +15,9 @@ import lang from 'quasar/lang/es'
 
 
 
+import {Notify} from 'quasar'
 
 
-export default { config: {},lang }
+
+export default { config: {},lang,plugins: {Notify} }
 

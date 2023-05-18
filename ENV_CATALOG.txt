@@ -1,0 +1,4 @@
+PORT = Puerto en el que se despliega el front
+BACK_URL = URL donde se consume el servicio de back
+BPM_URL = URL de los servicios de BPM
+SGDEA_URL = URL de los servicios de SGDEA
