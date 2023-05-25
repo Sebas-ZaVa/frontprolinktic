@@ -26,7 +26,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: false
-          tags: infralinktic/frontprolinktic:latest
+          tags: 931960161502.dkr.ecr.us-east-1.amazonaws.com/front-prolinktic:latest
 
       - name: Build, Tag and Push the image to Amazon ECR
         id: build-image
